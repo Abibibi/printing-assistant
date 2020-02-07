@@ -15,6 +15,7 @@ const app = {
         console.log(app.state.finalResult);
 
         app.displayTitle('Obtenez une suite de chiffres pairs ou impairs');
+        app.displayBaseline('Pratique pour vos impressions recto-verso !');
         app.displayForm('1 ou 2', '15 ou 87');
 
         if (app.state.finalResult) {
@@ -31,6 +32,14 @@ const app = {
         app.title.textContent = titleText;
         
         app.container.appendChild(app.title);
+    },
+
+    displayBaseline: (baselineText) => {
+        app.baseline = document.createElement('h2');
+        app.baseline.classList.add('baseline');
+        app.baseline.textContent = baselineText;
+
+        app.container.appendChild(app.baseline);
     },
 
     displayForm: (min, max) => {
