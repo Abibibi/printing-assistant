@@ -1,11 +1,25 @@
 const app = {
+    state: {
+        minValue: '',
+        maxValue: '',
+        allValues: [],
+        filteredValues: [],
+        finalResult: ''
+    },
+
     init: () => {
         app.container = document.getElementById('app');
 
         app.container.innerHTML = '';
 
+        console.log(app.state.finalResult);
+
         app.displayTitle('Obtenez une suite de chiffres pairs');
         app.displayForm(2, 86);
+
+        if (app.state.finalResult) {
+            app.displayResult(app.state.finalResult);
+        }
 
         /* app.displayTitle('Obtenez une suite de chiffres impairs');
         app.displayForm(1, 57); */
@@ -60,26 +74,32 @@ const app = {
 
     handleSubmit: (event) => {
         event.preventDefault();
-        app.init();
-        console.log(app.input.value);
-        console.log(event.target[0].value);
 
-        const minValue = event.target[0].value;
-        const maxValue = event.target[1].value;
+        app.state.minValue = parseInt(event.target[0].value);
+        app.state.maxValue = parseInt(event.target[1].value);
 
-        let evenValues = [];
-        let newEven = [];
-        let result = '';
-        
-        for (let i=minValue; i<=maxValue; i++) {
-            evenValues.push(i);
+        console.log(app.state.minValue);
+        console.log(app.state.maxValue);
 
-            newEven = evenValues.filter((evenValue) => evenValue % 2 === 0);
+        // loop to get all numbers comprised between app.state.minValue and app.state.maxValue
+        for (var i=app.state.minValue; i<=app.state.maxValue; i++) {
+            app.state.allValues = [...app.state.allValues, i];
+            // to only get even numbers among all numbers
+            app.state.filteredValues = app.state.allValues.filter((value) => value % 2 === 0);
 
-            result = newEven.join(', ');
+            // to properly format the suite so it can be used in print windows
+            app.state.finalResult = app.state.filteredValues.join(', ');
         }
 
-        app.displayResult(result);
+        console.log(app.state.allValues);
+
+        console.log(app.state.finalResult);
+
+        // to clear form
+        app.init();
+
+        // to reinitialize arrays and thus get a new suite after each form submission
+        app.state.allValues = [];
     },
 
     displayResult: (result) => {
