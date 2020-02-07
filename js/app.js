@@ -14,8 +14,8 @@ const app = {
 
         console.log(app.state.finalResult);
 
-        app.displayTitle('Obtenez une suite de chiffres pairs');
-        app.displayForm(2, 86);
+        app.displayTitle('Obtenez une suite de chiffres pairs ou impairs');
+        app.displayForm('1 ou 2', '15 ou 87');
 
         if (app.state.finalResult) {
             app.displayResult(app.state.finalResult);
@@ -84,9 +84,15 @@ const app = {
         // loop to get all numbers comprised between app.state.minValue and app.state.maxValue
         for (var i=app.state.minValue; i<=app.state.maxValue; i++) {
             app.state.allValues = [...app.state.allValues, i];
+            
             // to only get even numbers among all numbers
-            app.state.filteredValues = app.state.allValues.filter((value) => value % 2 === 0);
-
+            if (app.state.minValue % 2 === 0 && app.state.maxValue % 2 === 0) {
+                app.state.filteredValues = app.state.allValues.filter((value) => value % 2 === 0);
+            // to only get odd numbers among all numbers
+            } else if (app.state.minValue % 2 !== 0 && app.state.maxValue % 2 !== 0) {
+                app.state.filteredValues = app.state.allValues.filter((value) => value % 2 !== 0);
+            }
+            
             // to properly format the suite so it can be used in print windows
             app.state.finalResult = app.state.filteredValues.join(', ');
         }
