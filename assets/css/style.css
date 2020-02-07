@@ -1,0 +1,39 @@
+@media screen and (min-width: 300px) {
+    body {
+        display: flex;
+        justify-content: center;
+    }
+
+    #app {
+        margin-top: 10rem;
+    }
+
+    .title {
+        font-size: 1.5em;
+        text-align: center;
+        margin: 1rem 0 1.5rem;
+    }
+
+    .form {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .label {
+        margin-bottom: .7rem;
+    }
+
+    .inputLabelContainer {
+        display: flex;
+        flex-direction: column;
+        margin: .8rem 0 1rem;
+    }
+
+    .button {
+        width: 1.9rem;
+        height: 1.7rem;
+        text-align: center;
+        padding: 0;
+        margin: .8rem auto;
+    }
+}
