@@ -67,6 +67,7 @@ const app = {
         app.label.textContent = label;
 
         app.input = document.createElement('input');
+        app.input.classList.add('input');
         app.input.id = forIdAttributes;
         app.input.title = inputTitle;
         app.input.placeholder = `Ex : ${placeholder}`;

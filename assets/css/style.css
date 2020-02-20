@@ -1,51 +1,75 @@
-@media screen and (min-width: 300px) {
-    body {
-        display: flex;
-        justify-content: center;
-    }
+body {
+    display: flex;
+    justify-content: center;
+    background-color: #22878f;
+}
 
-    #app {
-        margin-top: 10rem;
-        width: 21rem;
-    }
+#app {
+    margin-top: 10rem;
+    padding: 0 1.2rem;
+    width: 21rem;
+    height: 100vh;
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+}
 
-    .title {
-        font-size: 1.5em;
-        text-align: center;
-        margin: 1rem 0;
-    }
+.title {
+    font-size: 1.5em;
+    text-align: left;
+    line-height: 1.8rem;
+    letter-spacing: 0.05rem;
+    margin: 1rem 0;
+    font-weight: 600;
+    font-family: 'Ubuntu', sans-serif;
+}
 
-    .baseline {
-        text-align: center;
-        color: rgb(99s, 155, 187);
-        font-style: italic;
-        margin: 1.5rem 0;
-    }
+.baseline {
+    text-align: left;
+    font-style: italic;
+    margin: .6rem 0;
+}
 
-    .form {
-        display: flex;
-        flex-direction: column;
-    }
+.form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1.7rem;
+    font-size: .9em;
+}
 
-    .label {
-        margin-bottom: .7rem;
-    }
+.label {
+    margin-bottom: .4rem;
+}
 
-    .inputLabelContainer {
-        display: flex;
-        flex-direction: column;
-        margin: .8rem 0 1rem;
-    }
+.inputLabelContainer {
+    display: flex;
+    flex-direction: column;
+    margin: .8rem 0 1rem;
+}
 
-    .button {
-        width: 1.9rem;
-        height: 1.7rem;
-        text-align: center;
-        padding: 0;
-        margin: .8rem auto;
-    }
+.input {
+    border: none;
+    height: 1.5rem;
+    border-radius: 0.3rem;
+    padding: 0 0.4rem;
+}
 
-    .result {
-        margin-top: 1.5rem;
-    }
+.button {
+    width: 1.9rem;
+    height: 1.7rem;
+    text-align: center;
+    padding: 0;
+    margin: .8rem auto;
+    border: none;
+    border-radius: 0.3rem;
+    background-color: #000000;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.button:hover {
+    background-color: gray;
+}
+
+.result {
+    margin-top: 1.5rem;
 }
