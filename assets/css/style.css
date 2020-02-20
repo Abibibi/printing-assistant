@@ -1,35 +1,45 @@
 body {
     display: flex;
     justify-content: center;
-    background-color: #22878f;
+    background-color: #ffffff;
 }
 
 #app {
-    margin-top: 10rem;
-    padding: 0 1.2rem;
-    width: 21rem;
+    width: 50rem;
     height: 100vh;
     color: #ffffff;
     font-family: 'Roboto', sans-serif;
+    background-color: #22878f;
 }
 
+/* .ink-container-content {
+    width: 100%;
+} */
+
+/* .ink-container-content-bigger {
+    width: 100%;
+} */
+
 .title {
-    font-size: 1.5em;
+    padding: 0 1.2rem;
+    font-size: 1.3em;
     text-align: left;
     line-height: 1.8rem;
     letter-spacing: 0.05rem;
-    margin: 1rem 0;
+    margin: 2.2rem 0 0.8rem;
     font-weight: 600;
     font-family: 'Ubuntu', sans-serif;
 }
 
 .baseline {
+    padding: 0 1rem;
     text-align: left;
     font-style: italic;
     margin: .6rem 0;
 }
 
 .form {
+    padding: 0 1.2rem;
     display: flex;
     flex-direction: column;
     margin-top: 1.7rem;
@@ -58,7 +68,7 @@ body {
     height: 1.7rem;
     text-align: center;
     padding: 0;
-    margin: .8rem auto;
+    margin: 1.1rem auto;
     border: none;
     border-radius: 0.3rem;
     background-color: #000000;
@@ -71,5 +81,82 @@ body {
 }
 
 .result {
+    padding: 0 1.2rem;
     margin-top: 1.5rem;
+}
+
+@media screen and (min-width: 300px) {
+    .ink-container-content-small {
+        display: block;
+        width: 100%;
+    }
+    
+    .ink-container-content-medium {
+        display: none; 
+    }
+
+    .ink-container-content-large {
+        display: none;  
+    }
+
+    .ink-container-content-extra-large {
+        display: none;  
+    }
+}
+
+@media screen and (min-width: 426px) {
+    .ink-container-content-small {
+        display: none;
+    }
+    
+    .ink-container-content-medium {
+        display: block;
+        width: 100%;
+    }
+
+    .ink-container-content-large {
+        display: none;  
+    }
+
+    .ink-container-content-extra-large {
+        display: none;  
+    }
+}
+
+@media screen and (min-width: 700px) {
+    .ink-container-content-small {
+        display: none;
+    }
+    
+    .ink-container-content-medium {
+        display: none;
+    }
+
+    .ink-container-content-large {
+        display: block;
+        width: 100%;
+    }
+
+    .ink-container-content-extra-large {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    .ink-container-content-small {
+        display: none;
+    }
+    
+    .ink-container-content-medium {
+        display: none;
+    }
+
+    .ink-container-content-large {
+        display: none;
+    }
+
+    .ink-container-content-extra-large {
+        display: block;
+        width: 100%;
+    }
 }

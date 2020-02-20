@@ -1,3 +1,5 @@
+import inkPictures from '../data/inkPictures.js';
+
 const app = {
     state: {
         minValue: '',
@@ -14,6 +16,7 @@ const app = {
 
         console.log(app.state.finalResult);
 
+        app.displayInk();
         app.displayTitle('Obtenez une suite de chiffres pairs ou impairs');
         app.displayBaseline('Pratique pour vos impressions recto-verso !');
         app.displayForm('1 ou 2', '15 ou 87');
@@ -24,6 +27,24 @@ const app = {
 
         /* app.displayTitle('Obtenez une suite de chiffres impairs');
         app.displayForm(1, 57); */
+    },
+
+    displayInk: () => {
+        app.inkContainer = document.createElement('div');
+        app.inkContainer.classList.add('ink-container');
+
+        inkPictures.map((picture) => {
+            app.ink = document.createElement('img');
+
+            app.ink.setAttribute('src', picture.link);
+            app.ink.setAttribute('alt', 'encre multicolore coulant de haut en bas');
+
+            app.ink.classList.add(`ink-container-content-${picture.type}`);
+
+            app.inkContainer.appendChild(app.ink);
+        });
+
+        app.container.appendChild(app.inkContainer);
     },
 
     displayTitle: (titleText) => {
