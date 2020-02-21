@@ -1,18 +1,18 @@
 export default [
     {   
         type: 'small',
-        link: 'https://www.cjoint.com/doc/20_02/JBunbEigZMA_drippingInk3.png',        
+        link: 'https://www.cjoint.com/doc/20_02/JBvoDg4xxFA_drippingInk-small.png',        
     },
     {   
         type: 'medium',
-        link: 'https://www.cjoint.com/doc/20_02/JBuppa6srRA_drippingInk-moyen.png',
+        link: 'https://www.cjoint.com/doc/20_02/JBvouvHe7PA_drippingInk-medium.png',
     },
     {
         type: 'large',
-        link: 'https://www.cjoint.com/doc/20_02/JBupzQemFmA_drippingInk-grand.png',
+        link: 'https://www.cjoint.com/doc/20_02/JBvoyfov0sA_drippingInk-large.png',
     },
     {
         type: 'extra-large',
-        link: 'https://www.cjoint.com/doc/20_02/JBupAIv5jhA_drippingInk-tres-grand.png'
+        link: 'https://www.cjoint.com/doc/20_02/JBvoziKoVkA_drippingInk-extra-large.png'
     }
 ];

@@ -1,4 +1,4 @@
-import inkPictures from '../data/inkPictures.js';
+import inkPictures from '../data/inkPictures2.js';
 
 const app = {
     state: {
@@ -16,6 +16,9 @@ const app = {
 
         console.log(app.state.finalResult);
 
+        app.titleForm = document.createElement('title-form');
+        app.titleForm.classList.add('title-form');
+
         app.displayInk();
         app.displayTitle('Obtenez une suite de chiffres pairs ou impairs');
         app.displayBaseline('Pratique pour vos impressions recto-verso !');
@@ -27,6 +30,8 @@ const app = {
 
         /* app.displayTitle('Obtenez une suite de chiffres impairs');
         app.displayForm(1, 57); */
+
+        app.container.appendChild(app.titleForm);
     },
 
     displayInk: () => {
@@ -48,22 +53,30 @@ const app = {
     },
 
     displayTitle: (titleText) => {
+        app.titleBaseline = document.createElement('div');
+        app.titleBaseline.classList.add('title-baseline');
+
         app.title = document.createElement('h1');
         app.title.classList.add('title');
         app.title.textContent = titleText;
         
-        app.container.appendChild(app.title);
+        app.titleBaseline.appendChild(app.title);
+        app.titleForm.appendChild(app.titleBaseline);
     },
 
     displayBaseline: (baselineText) => {
         app.baseline = document.createElement('h2');
         app.baseline.classList.add('baseline');
         app.baseline.textContent = baselineText;
-
-        app.container.appendChild(app.baseline);
+        
+        app.titleBaseline.appendChild(app.baseline);
+        app.titleForm.appendChild(app.titleBaseline);
     },
 
     displayForm: (min, max) => {
+        app.formResults = document.createElement('div');
+        app.formResults.classList.add('form-results');
+
         app.form = document.createElement('form');
         app.form.classList.add('form');
 
@@ -78,7 +91,8 @@ const app = {
 
         app.form.addEventListener('submit', app.handleSubmit);
 
-        app.container.appendChild(app.form);
+        app.formResults.appendChild(app.form);
+        app.titleForm.appendChild(app.formResults);
     },
 
     displayLabelInput: (label, forIdAttributes, inputTitle, placeholder) => {
@@ -144,7 +158,7 @@ const app = {
         app.result.classList.add('result');
         app.result.textContent = result;
 
-        app.container.appendChild(app.result);
+        app.formResults.appendChild(app.result);
     }
 };
 
