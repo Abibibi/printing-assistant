@@ -14,24 +14,28 @@ const app = {
 
         app.container.innerHTML = '';
 
-        console.log(app.state.finalResult);
-
-        app.titleForm = document.createElement('title-form');
-        app.titleForm.classList.add('title-form');
+        app.titleFormResults = document.createElement('div');
+        app.titleFormResults.classList.add('title-form-results');
 
         app.displayInk();
         app.displayTitle('Obtenez une suite de chiffres pairs ou impairs');
         app.displayBaseline('Pratique pour vos impressions recto-verso !');
-        app.displayForm('1 ou 2', '15 ou 87');
+        app.displayDesc();
+        app.displayForm('1 ou 2', '15 ou 84');
 
-        if (app.state.finalResult) {
-            app.displayResult(app.state.finalResult);
+        console.log(app.state.finalResult.charAt(0));
+        console.log(typeof app.state.finalResult.charAt(0));
+
+        // to display a message on form submission,
+        // informing the user how the result displayed
+        // can be used
+        if (!isNaN(parseInt(app.state.finalResult.charAt(0)))) {
+            app.displayInstruction();
         }
 
-        /* app.displayTitle('Obtenez une suite de chiffres impairs');
-        app.displayForm(1, 57); */
+        app.displayResult(app.state.finalResult);
 
-        app.container.appendChild(app.titleForm);
+        app.container.appendChild(app.titleFormResults);
     },
 
     displayInk: () => {
@@ -61,7 +65,7 @@ const app = {
         app.title.textContent = titleText;
         
         app.titleBaseline.appendChild(app.title);
-        app.titleForm.appendChild(app.titleBaseline);
+        app.titleFormResults.appendChild(app.titleBaseline);
     },
 
     displayBaseline: (baselineText) => {
@@ -70,7 +74,28 @@ const app = {
         app.baseline.textContent = baselineText;
         
         app.titleBaseline.appendChild(app.baseline);
-        app.titleForm.appendChild(app.titleBaseline);
+    },
+
+    displayDesc: () => {
+        app.desc = document.createElement('div');
+        app.desc.classList.add('desc');
+        app.desc.textContent = 'Générez une suite en soumettant le formulaire ci-contre.';
+
+        app.titleBaseline.appendChild(app.desc);
+    },
+
+    displayInstruction: () => {
+        app.instruction = document.createElement('div');
+        app.instruction.classList.add('instruction');
+
+        app.instruction.textContent = 
+        `
+            Vous pouvez copier cette suite
+            et la coller dans votre
+            fenêtre d'impression.
+        `;
+
+        app.titleBaseline.appendChild(app.instruction);
     },
 
     displayForm: (min, max) => {
@@ -92,7 +117,7 @@ const app = {
         app.form.addEventListener('submit', app.handleSubmit);
 
         app.formResults.appendChild(app.form);
-        app.titleForm.appendChild(app.formResults);
+        app.titleFormResults.appendChild(app.formResults);
     },
 
     displayLabelInput: (label, forIdAttributes, inputTitle, placeholder) => {
@@ -123,8 +148,36 @@ const app = {
         app.state.minValue = parseInt(event.target[0].value);
         app.state.maxValue = parseInt(event.target[1].value);
 
-        console.log(app.state.minValue);
-        console.log(app.state.maxValue);
+        // to make sure that the figures entered are integer
+        if (
+            event.target[0].value % 1 != 0 && !isNaN(app.state.minValue) || 
+            event.target[1].value % 1 != 0 && !isNaN(app.state.maxValue)
+        ) {
+            app.state.finalResult = 'Veuillez renseigner des chiffres entiers.'
+            app.init();
+            return;
+        };
+
+        
+
+        // 
+        if (isNaN(app.state.minValue) || isNaN(app.state.maxValue)) {
+            app.state.finalResult = 'Veuillez renseignez des chiffres.'
+            app.init();
+            return;
+        };
+
+        if (app.state.minValue >= app.state.maxValue) {
+            app.state.finalResult = 'Le chiffre minimal doit être inférieur au chiffre maximal.';
+            app.init();
+            return;
+        };
+
+        if (app.state.minValue === 0 || app.state.maxValue === 0) {
+            app.state.finalResult = 'Tous les chiffres doivent être positifs.'
+            app.init();
+            return;
+        };     
 
         // loop to get all numbers comprised between app.state.minValue and app.state.maxValue
         for (var i=app.state.minValue; i<=app.state.maxValue; i++) {
@@ -133,24 +186,29 @@ const app = {
             // to only get even numbers among all numbers
             if (app.state.minValue % 2 === 0 && app.state.maxValue % 2 === 0) {
                 app.state.filteredValues = app.state.allValues.filter((value) => value % 2 === 0);
+                
+                // to properly format the suite so it can be used in print windows
+                app.state.finalResult = app.state.filteredValues.join(', ');
             // to only get odd numbers among all numbers
             } else if (app.state.minValue % 2 !== 0 && app.state.maxValue % 2 !== 0) {
                 app.state.filteredValues = app.state.allValues.filter((value) => value % 2 !== 0);
-            }
-            
-            // to properly format the suite so it can be used in print windows
-            app.state.finalResult = app.state.filteredValues.join(', ');
+
+                // to properly format the suite so it can be used in print windows
+                app.state.finalResult = app.state.filteredValues.join(', ');
+            } else {
+                app.state.finalResult = 'Les chiffres renseignés doivent être tous deux soit pairs soit impairs.'
+            } 
         }
 
         console.log(app.state.allValues);
 
         console.log(app.state.finalResult);
 
-        // to clear form
-        app.init();
-
         // to reinitialize arrays and thus get a new suite after each form submission
         app.state.allValues = [];
+
+        // to clear form
+        app.init();        
     },
 
     displayResult: (result) => {

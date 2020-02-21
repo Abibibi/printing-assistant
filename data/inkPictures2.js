@@ -1,7 +1,7 @@
 export default [
     {   
         type: 'small',
-        link: 'https://www.cjoint.com/doc/20_02/JBvoDg4xxFA_drippingInk-small.png',        
+        link: 'https://www.cjoint.com/doc/20_02/JBvpAI4UMgA_drippingInk-small.png',        
     },
     {   
         type: 'medium',

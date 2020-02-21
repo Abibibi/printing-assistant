@@ -11,37 +11,35 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
-/* .ink-container-content {
-    width: 100%;
-} */
-
-/* .ink-container-content-bigger {
-    width: 100%;
-} */
-
 .title {
-    padding: 0 1.2rem;
     font-size: 1.3em;
     text-align: left;
     line-height: 1.8rem;
     letter-spacing: 0.05rem;
-    margin: 2.2rem 0 0.8rem;
     font-weight: 600;
     font-family: 'Ubuntu', sans-serif;
 }
 
 .baseline {
-    padding: 0 1rem;
     text-align: left;
     font-style: italic;
     margin: .6rem 0;
 }
 
+.desc {
+    display: none;
+    margin-top: 2.1rem;
+}
+
+.instruction {
+    display: none;
+    line-height: 1.3rem;
+    margin-top: 6.6rem;
+}
+
 .form {
-    padding: 0 1.2rem;
     display: flex;
     flex-direction: column;
-    margin-top: 1.7rem;
     font-size: .9em;
 }
 
@@ -67,7 +65,7 @@ body {
     height: 1.7rem;
     text-align: center;
     padding: 0;
-    margin: 1.1rem auto;
+    margin: 1.1rem auto 2.1rem;
     border: none;
     border-radius: 0.3rem;
     background-color: #000000;
@@ -76,12 +74,8 @@ body {
 }
 
 .button:hover {
-    background-color: gray;
-}
-
-.result {
-    padding: 0 1.2rem;
-    margin-top: 1.5rem;
+    background-color: rgb(255, 147, 223);
+    color: #000000;
 }
 
 @media screen and (min-width: 300px) {
@@ -100,6 +94,15 @@ body {
 
     .ink-container-content-extra-large {
         display: none;  
+    }
+
+    .title-form-results {
+        margin-top: 2rem;
+        padding: 0 1.2rem;
+    }
+
+    .form-results {
+        margin-top: 1.7rem;
     }
 }
 
@@ -139,6 +142,95 @@ body {
     .ink-container-content-extra-large {
         display: none;
     }
+
+    .title-form-results {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .title {
+        text-align: center;
+    }
+
+    .baseline {
+        text-align: center;
+        margin: 1.3rem 0 0;
+    }
+
+    .form-results {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .form {
+        display: flex;
+        flex-direction: column;
+        font-size: .9em;
+        width: 22rem;
+        margin: 0;
+    }
+}
+
+@media screen and (min-width: 1023px) {
+    .title-form-results {
+        flex-direction: row;
+        width: 60rem;
+        margin: 6rem auto 0;
+        align-items: flex-start;
+    }
+
+    .title-baseline {
+        width: 50%;
+    }
+
+    .title {
+        padding: 0;
+        text-align: left;
+        width: 90%;
+        font-size: 1.8rem;
+        line-height: 2rem;
+    }
+
+    .baseline {
+        padding: 0;
+        text-align: left;
+        font-size: 1.2em;
+        margin-top: 1.5rem;
+    }
+
+    .desc {
+        display: block;
+    }
+
+    .instruction {
+        display: block;
+    }
+
+    .title-results {
+        width: 50%;
+    }
+
+    .form-results {
+        margin: 0;
+        align-items: center;
+    }
+
+    .form {
+        padding: 0;
+    }
+
+    .inputLabelContainer {
+        margin: 1rem 0 2rem;
+    }
+
+    .result {
+        padding: 0;
+        width: 22rem;
+    }
+
 }
 
 @media screen and (min-width: 1400px) {
@@ -159,3 +251,5 @@ body {
         width: 100%;
     }
 }
+
+
