@@ -2,6 +2,7 @@ body {
     display: flex;
     justify-content: center;
     background-color: #22878f;
+    overflow-y: scroll;
 }
 
 #app {
@@ -34,7 +35,7 @@ body {
 .instruction {
     display: none;
     line-height: 1.3rem;
-    margin-top: 6.6rem;
+    margin-top: 7.6rem;
 }
 
 .form {
@@ -224,6 +225,10 @@ body {
 
     .inputLabelContainer {
         margin: 1rem 0 2rem;
+    }
+
+    .button {
+        margin: 1.1rem auto 3.1rem;
     }
 
     .result {
