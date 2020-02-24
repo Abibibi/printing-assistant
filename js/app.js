@@ -153,7 +153,7 @@ const app = {
             event.target[0].value % 1 != 0 && !isNaN(app.state.minValue) || 
             event.target[1].value % 1 != 0 && !isNaN(app.state.maxValue)
         ) {
-            app.state.finalResult = 'Veuillez renseigner des chiffres entiers.'
+            app.state.finalResult = 'Veuillez renseigner des nombres entiers.'
             app.init();
             return;
         };
