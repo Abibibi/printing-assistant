@@ -1,4 +1,7 @@
-import inkPictures from '../data/inkPictures2.js';
+import inkPictures from './data/inkPictures2.js';
+
+import './styles/css/reset.css';
+import './styles/css/style.css';
 
 const app = {
     state: {
