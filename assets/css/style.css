@@ -13,10 +13,10 @@ body {
 }
 
 .title {
-    font-size: 1.3em;
+    font-size: 4vh;
     text-align: left;
-    line-height: 1.8rem;
-    letter-spacing: 0.05rem;
+    line-height: 4.9vh;
+    letter-spacing: 0.1vw;
     font-weight: 600;
     font-family: 'Ubuntu', sans-serif;
 }
@@ -24,54 +24,64 @@ body {
 .baseline {
     text-align: left;
     font-style: italic;
-    margin: .6rem 0;
+    margin: 2.7vh 0;
+    font-size: 2.7vh;
 }
 
 .desc {
     display: none;
-    margin-top: 2.1rem;
+    margin-top: 4vh;
 }
 
 .instruction {
     display: none;
-    line-height: 1.3rem;
-    margin-top: 7.6rem;
+    line-height: 3.6vh;
+    margin-top: 18.2vh;
+    font-size: 2.5vh;
 }
 
 .form {
     display: flex;
     flex-direction: column;
-    font-size: .9em;
+    font-size: .8vh;
 }
 
 .label {
-    margin-bottom: .4rem;
+    margin-bottom: 1vh;
+    font-size: 1.8vh;
 }
 
 .inputLabelContainer {
     display: flex;
     flex-direction: column;
-    margin: .8rem 0 1rem;
+    margin: 1.8vh 0 2.5vh;
 }
 
 .input {
     border: none;
-    height: 1.5rem;
-    border-radius: 0.3rem;
-    padding: 0 0.4rem;
+    height: 4.3vh;
+    border-radius: 1vh;
+    padding: 0 1vh;
+    font-size: 2.2vh;
 }
 
 .button {
-    width: 1.9rem;
-    height: 1.7rem;
+    width: 5vh;
+    height: 4.6vh;
     text-align: center;
     padding: 0;
-    margin: 1.1rem auto 2.1rem;
+    margin: 1.3vh auto 7vh;
     border: none;
-    border-radius: 0.3rem;
+    border-radius: 1vh;
     background-color: #000000;
     font-weight: bold;
     color: #ffffff;
+    font-size: 2vh;
+}
+
+.result {
+    font-size: 2.5vh;
+    line-height: 3.5vh;
 }
 
 .button:hover {
@@ -98,12 +108,12 @@ body {
     }
 
     .title-form-results {
-        margin-top: 2rem;
-        padding: 0 1.2rem;
+        margin-top: 8vh;
+        padding: 0 3vh;
     }
 
     .form-results {
-        margin-top: 1.7rem;
+        margin-top: 4vh;
     }
 }
 
@@ -156,7 +166,7 @@ body {
 
     .baseline {
         text-align: center;
-        margin: 1.3rem 0 0;
+        margin: 3.7vh 0 0;
     }
 
     .form-results {
@@ -169,18 +179,91 @@ body {
     .form {
         display: flex;
         flex-direction: column;
-        font-size: .9em;
-        width: 22rem;
+        font-size: 0.8vh;
+        width: 80%;
         margin: 0;
+    }
+
+    .result {
+        width: 80%;
+    }
+}
+
+@media screen and (min-width: 1000px) and (max-width: 1100px) and (min-height: 1300px) and (max-height: 1400px) {
+    .ink-container-content-small {
+        display: none;
+    }
+    
+    .ink-container-content-medium {
+        display: none;
+    }
+
+    .ink-container-content-large {
+        display: block;
+        width: 100%;
+    }
+
+    .ink-container-content-extra-large {
+        display: none;
+    }
+
+    #app .title-form-results {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 10vh;
+        width: 100%;
+    }
+
+    #app .title-baseline {
+        width: 100%;
+    }
+
+    #app .title {
+        text-align: center;
+        width: 100%;
+    }
+
+    #app .baseline {
+        text-align: center;
+        margin: 3.3vh 0 0;
+    }
+
+    #app .desc {
+        display: none;
+    }
+
+    #app .form-results {
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #app .form {
+        display: flex;
+        flex-direction: column;
+        font-size: 0.8vh;
+        width: 100%;
+        margin: 6vh 0 0;
+    }
+
+    #app .instruction {
+        display: none;
+    }
+
+    #app .result {
+        width: 100%;
     }
 }
 
 @media screen and (min-width: 1023px) {
     .title-form-results {
         flex-direction: row;
-        width: 60rem;
-        margin: 6rem auto 0;
+        width: 80%;
+        margin: 17vh auto;
         align-items: flex-start;
+        justify-content: center;
     }
 
     .title-baseline {
@@ -191,19 +274,20 @@ body {
         padding: 0;
         text-align: left;
         width: 90%;
-        font-size: 1.8rem;
-        line-height: 2rem;
+        font-size: 4vh;
+        line-height: 5.2vh;
     }
 
     .baseline {
         padding: 0;
         text-align: left;
-        font-size: 1.2em;
-        margin-top: 1.5rem;
+        font-size: 2.5vh;
+        margin: 2.7vh 0 0;
     }
 
     .desc {
         display: block;
+        font-size: 2.5vh;
     }
 
     .instruction {
@@ -220,20 +304,16 @@ body {
     }
 
     .form {
-        padding: 0;
+        padding: 1.6vh 0 0;
     }
 
     .inputLabelContainer {
-        margin: 1rem 0 2rem;
-    }
-
-    .button {
-        margin: 1.1rem auto 3.1rem;
+        margin: 0 0 5.7vh;
     }
 
     .result {
         padding: 0;
-        width: 22rem;
+        width: 80%;
     }
 
 }
