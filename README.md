@@ -1,7 +1,25 @@
-Suite paire ou impaire
+Assistant d'impression
 ====================
 
-Objectif de l'application
+Purpose
 --------------------
 
-Cette application permet d'obtenir une suite de chiffres pairs ou impairs compris entre un chiffre minimal et un chiffre maximal renseignés par l'utilisateur-rice. Pratique quand on souhaite imprimer, en recto-verso, les pages paires dans un premier temps puis les pages impaires (ou vice-versa).
+Need to print a huge two-sided document quickly? Get a sequence of either the even or the odd numbers of your pages, and enter it in your printing window.
+
+Tools used
+--------------------
+
+- JavaScript
+- Webpack and Babel
+
+Language
+--------------------
+
+French
+
+Website
+--------------------
+
+https://assistantimpression.abebangwe.com
+
+Deployed on Netlify.
